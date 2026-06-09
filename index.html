@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İyi ki Doğdun İrem! 🎂</title>
+    <title>İyi ki Doğdun Sevdiceğim! 🎂</title>
+    <!-- Romantik Yazı Tipleri Ekledik -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #fff0f5 0%, #ffc0cb 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 50%, #ffb6c1 100%);
+            font-family: 'Quicksand', sans-serif;
             color: #d81b60;
             min-height: 100vh;
             display: flex;
@@ -19,72 +21,105 @@
             overflow-x: hidden;
         }
 
+        /* Arka plandaki parıltı efekti */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2);
+            background-color: rgba(255, 255, 255, 0.93);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 45px rgba(216, 27, 96, 0.2);
             text-align: center;
             max-width: 90%;
             width: 400px;
             z-index: 10;
             position: relative;
+            border: 3px double #ffc0cb;
+            backdrop-filter: blur(5px);
         }
 
         h1 {
-            font-size: 28px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
             margin-bottom: 10px;
+            color: #ff4081;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .romantic-subtext {
+            font-size: 16px;
+            color: #6a6a6a;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            padding: 0 10px;
         }
 
         .cat-emojis {
-            font-size: 35px;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
+            font-size: 45px;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: heartBeat 2s infinite;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-15px);}
-            60% {transform: translateY(-7px);}
+        /* Kalp gibi atan buton ve emoji animasyonu */
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
         }
 
         button {
-            background-color: #ff69b4;
+            background: linear-gradient(45deg, #ff69b4, #ff4081);
             color: white;
             border: none;
-            padding: 15px 25px;
-            font-size: 16px;
-            border-radius: 30px;
+            padding: 18px 35px;
+            font-size: 18px;
+            border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-            transition: transform 0.3s, background-color 0.3s;
-            margin-top: 20px;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+            transition: all 0.4s ease;
+            margin-top: 10px;
+            font-family: 'Quicksand', sans-serif;
+            animation: heartBeat 2.5s infinite;
         }
 
         button:hover {
-            background-color: #d81b60;
-            transform: scale(1.05);
+            background: linear-gradient(45deg, #d81b60, #ff69b4);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.6);
         }
 
         #secret-note {
             display: none;
             margin-top: 20px;
-            animation: fadeIn 1s forwards;
+            animation: superFade 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes superFade {
+            from { opacity: 0; transform: scale(0.8) translateY(40px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .photo-container {
             width: 100%;
-            max-width: 250px;
-            margin: 0 auto 20px auto;
-            border-radius: 15px;
+            max-width: 280px;
+            margin: 0 auto 25px auto;
+            border-radius: 25px;
             overflow: hidden;
-            border: 4px solid #ffb6c1;
+            border: 8px solid #fff;
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.25);
+            position: relative;
         }
 
         .photo-container img {
@@ -94,81 +129,95 @@
         }
 
         .note-text {
-            font-size: 18px;
-            line-height: 1.6;
-            font-style: italic;
-            color: #555;
-            padding: 15px;
-            border-top: 2px dashed #ffb6c1;
-            border-bottom: 2px dashed #ffb6c1;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #3a3a3a;
+            padding: 25px 15px;
+            border-top: 2px dotted #ffb6c1;
+            border-bottom: 2px dotted #ffb6c1;
+            background-color: #fffafb;
+            border-radius: 16px;
+            box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.1);
         }
 
-        /* Kalp Animasyonu İçin */
+        /* Ekranda uçuşan kalpler */
         .heart {
             position: fixed;
-            font-size: 24px;
-            color: #ff69b4;
             pointer-events: none;
             z-index: 1;
-            animation: float 4s linear infinite;
+            animation: floatUp 4.5s linear infinite;
             opacity: 0;
             bottom: -50px;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-105vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="cat-emojis">🐈 🤍 🐱</div>
+        <div class="cat-emojis">🐾 🐱 🤍 🐈 🐾</div>
         <h1>İyi ki Doğdun İrem!</h1>
-        <p>Senin için küçük bir sürprizim var...</p>
+        
+        <!-- Süslemek için eklediğimiz yeni tatlı sözler -->
+        <div class="romantic-subtext" id="intro-text">
+            "Dünyadaki tüm kediler mırlasa bile senin sesin kadar huzur veremez kalbime... <br>
+            Hayatıma mırlayan bir mutluluk gibi girdin, iyi ki doğdun dünyamın en güzel rengi."
+        </div>
         
         <button id="revealBtn">Nota erişmek için dokun 💌</button>
 
         <div id="secret-note">
             <div class="photo-container">
-                <!-- Fotoğrafın doğrudan resmi açan linki buraya eklendi -->
-                <img src="https://i.ibb.co/fGKwyrt7/photo.jpg" alt="İrem" onerror="this.src='https://placekitten.com/250/250';">
+                <!-- Çalışan Imgur Linki -->
+                <img src="https://i.imgur.com/9hM8qAR.jpeg" alt="İrem">
             </div>
             <p class="note-text">
                 Her ressam çizim yapabilir, her şair şiir yazabilir ama kalbe giden renkleri ve sözcükleri ancak gerçek sevgi yapabilir.<br><br>
-                İlerleyen süreçte görüşmek ve ilişkimizi bir adım öteye taşımak dileğiyle... Seni seviyorum sevdiceğim, iyi ki varsın, iyi ki doğdun mutlu yıllar 🤍
+                İlerleyen süreçte görüşmek ve ilişkimizi bir adım öteye taşımak dileğiyle seni seviyorum sevdiceğim iyiki varsın iyiki doğdun mutlu yıllar 🤍
             </p>
         </div>
     </div>
 
     <script>
-        // Butona tıklama olayı
+        // Butona tıklandığında gerçekleşecek sihirler
         document.getElementById('revealBtn').addEventListener('click', function() {
-            this.style.display = 'none'; // Butonu gizle
-            document.getElementById('secret-note').style.display = 'block'; // Notu göster
+            this.style.display = 'none'; 
+            document.getElementById('intro-text').style.display = 'none'; // Üstteki yazıyı gizle ki kalabalık olmasın
+            document.getElementById('secret-note').style.display = 'block'; 
+            
+            // Butona basıldığı an büyük bir kalp patlaması yarat
+            for(let i=0; i<30; i++) {
+                setTimeout(createHeart, i * 50);
+            }
         });
 
-        // Kalp Animasyonu Oluşturucu
+        // Kalp oluşturma fonksiyonu
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = '🤍';
             
-            // Rastgele konum ve boyut
+            const heartTypes = ['💖', '🤍', '💗', '❤️', '🐱', '🐾'];
+            heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+            
             heart.style.left = Math.random() * 100 + 'vw';
+            // Rastgele hızlar ve boyutlar
             heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
             
             document.body.appendChild(heart);
             
-            // Animasyon bitince kalbi DOM'dan sil
             setTimeout(() => {
                 heart.remove();
-            }, 5000);
+            }, 4500);
         }
 
-        // Her 300ms'de bir yeni kalp üret
+        // Sürekli arka planda yavaşça kalpler uçuşsun
         setInterval(createHeart, 300);
     </script>
 </body>
